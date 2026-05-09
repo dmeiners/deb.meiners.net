@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEB.MEINERS.NET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --accent: #00d4ff;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+        }
+
+        .package-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 212 255 / 0.1), 0 8px 10px -6px rgb(0 212 255 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 min-h-screen">
+    <!-- Navigation -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-cyan-500 rounded-xl flex items-center justify-center text-black font-bold text-xl">M</div>
+                <span class="font-semibold tracking-wider text-xl">DEB.MEINERS.NET</span>
+            </div>
+            
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#packages" class="hover:text-cyan-400 transition-colors">Packages</a>
+                <a href="#bugs" class="hover:text-cyan-400 transition-colors">Bug Reports</a>
+                <a href="https://github.com/dmeiners/deb.meiners.net" target="_blank"
+                   class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-32 pb-24 text-center">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-2 mb-6">
+                <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span class="text-sm font-medium tracking-widest">NGINX • Ubuntu • Debian Packages</span>
+            </div>
+            
+            <h1 class="title-font text-7xl md:text-8xl font-semibold tracking-tighter text-white mb-6">
+                DEB.<span class="text-cyan-400">MEINERS</span>.NET
+            </h1>
+            
+            <p class="text-2xl text-zinc-400 max-w-2xl mx-auto">
+                High-quality NGINX .deb packages for modern Ubuntu
+            </p>
+            
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#packages" 
+                   class="bg-white text-black hover:bg-cyan-400 transition-colors px-8 py-4 rounded-2xl font-semibold flex items-center gap-3">
+                    Browse Packages
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://github.com/dmeiners/deb.meiners.net" target="_blank"
+                   class="border border-zinc-700 hover:border-zinc-400 transition-colors px-8 py-4 rounded-2xl font-medium flex items-center gap-3">
+                    <i class="fab fa-github"></i>
+                    View Repository
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-24 bg-zinc-900">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-semibold title-font tracking-tight mb-8">About</h2>
+                    <div class="h-1 w-16 bg-cyan-500 rounded-full"></div>
+                </div>
+                
+                <div class="md:col-span-7 text-lg leading-relaxed text-zinc-300">
+                    <p class="mb-6">
+                        This is a home for packaging NGINX deb packages for Ubuntu.
+                    </p>
+                    <p>
+                        I build and maintain clean, up-to-date Debian packages of the latest stable and legacy NGINX releases 
+                        for the current Ubuntu LTS versions. No bloat, no extra patches — just reliable packages built directly from official sources.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" class="py-24">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-5xl font-semibold title-font tracking-tight">Packages</h2>
+                    <p class="text-zinc-400 mt-3 text-lg">Built fresh for the latest NGINX releases</p>
+                </div>
+                <div class="text-right text-sm text-zinc-500 mt-4 md:mt-0">
+                    Supported Ubuntu LTS releases:<br>
+                    <span class="font-mono text-cyan-400">26.04 • 24.04</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="package-card glass border border-zinc-700 rounded-3xl p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-bolt text-amber-400 text-2xl"></i>
+                            <div>
+                                <span class="font-mono font-bold text-lg">NGINX Stable</span>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-emerald-900 text-emerald-400 px-3 py-1 rounded-full">Latest</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Official stable branch with the latest features and security updates.
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-zinc-700 text-xs font-mono text-zinc-500">
+                        nginx-stable • amd64 + arm64
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="package-card glass border border-zinc-700 rounded-3xl p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-shield-alt text-cyan-400 text-2xl"></i>
+                            <div>
+                                <span class="font-mono font-bold text-lg">NGINX Legacy</span>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-blue-900 text-blue-400 px-3 py-1 rounded-full">Stable</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        The proven, battle-tested legacy branch for maximum stability.
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-zinc-700 text-xs font-mono text-zinc-500">
+                        nginx • amd64 + arm64
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="package-card glass border border-zinc-700 rounded-3xl p-8 bg-gradient-to-br from-zinc-900 to-zinc-950">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-server text-purple-400 text-2xl"></i>
+                        <span class="font-semibold">How to use</span>
+                    </div>
+                    <div class="font-mono text-sm bg-black/50 p-6 rounded-2xl border border-zinc-800 leading-relaxed">
+                        <span class="text-cyan-400">sudo</span> add-apt-repository ppa:dmeiners/nginx<br><br>
+                        <!-- <span class="text-cyan-400">sudo</span> apt update<br><br> -->
+                        <!-- echo "deb https://deb.meiners.net stable main" | sudo tee /etc/apt/sources.list.d/meiners-nginx.list<br><br> -->
+                        <span class="text-emerald-400">sudo apt update &amp;&amp; sudo apt install nginx</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bug Reporting -->
+    <section id="bugs" class="py-24 bg-zinc-900">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-5xl font-semibold title-font tracking-tight mb-6">Bug Reporting</h2>
+                <p class="text-zinc-400 text-xl mb-10">
+                    Found an issue with a package? Please report it on GitHub.
+                </p>
+                
+                <a href="https://github.com/dmeiners/deb.meiners.net/issues" 
+                   target="_blank"
+                   class="inline-flex items-center gap-4 bg-zinc-800 hover:bg-zinc-700 transition-colors px-10 py-6 rounded-3xl group">
+                    <i class="fab fa-github text-4xl"></i>
+                    <div class="text-left">
+                        <div class="font-semibold text-lg group-hover:text-cyan-400 transition-colors">Report on GitHub Issues</div>
+                        <div class="text-sm text-zinc-500">https://github.com/dmeiners/deb.meiners.net/issues</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-12 bg-black">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-zinc-500 text-sm">
+                    © 2026 deb.meiners.net • Built for the community
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm">
+                    <a href="https://nginx.org" target="_blank" class="hover:text-cyan-400 transition-colors">nginx.org</a>
+                    <a href="https://github.com/dmeiners" target="_blank" class="hover:text-cyan-400 transition-colors">dmeiners</a>
+                    <a href="https://github.com/dmeiners/deb.meiners.net" target="_blank" class="hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        document.documentElement.style.setProperty('--tw-ring-color', '#22d3ee');
+    </script>
+</body>
+</html>
+
